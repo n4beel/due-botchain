@@ -2,9 +2,9 @@
 pragma solidity 0.8.23;
 
 import {Script, console2} from "forge-std/Script.sol";
-// import {YourContract} from "../src/YourContract.sol";
+import {Due} from "../src/Due.sol";
 
-/// @notice Deploys this project's contract and prints the two env lines the frontend needs.
+/// @notice Deploys Due and prints the two env lines the frontend needs.
 /// @dev Bohr testnet first:
 ///   forge script script/Deploy.s.sol --rpc-url bohr --broadcast
 /// Mainnet only once the full flow passes on testnet. Mainnet BOT has no faucet, so prefer passing
@@ -15,18 +15,16 @@ contract Deploy is Script {
     uint256 deployerKey = vm.envUint("DEPLOYER_PRIVATE_KEY");
 
     vm.startBroadcast(deployerKey);
-    // YourContract deployed = new YourContract();
+    Due due = new Due();
     vm.stopBroadcast();
 
-    address deployedAddress = address(0); // address(deployed);
-
     console2.log("chain id        ", block.chainid);
-    console2.log("contract        ", deployedAddress);
+    console2.log("Due             ", address(due));
     console2.log("");
     console2.log("Add to .env.local:");
     console2.log(
       string.concat(
-        "NEXT_PUBLIC_CONTRACT_", vm.toString(block.chainid), "=", vm.toString(deployedAddress)
+        "NEXT_PUBLIC_CONTRACT_", vm.toString(block.chainid), "=", vm.toString(address(due))
       )
     );
     // One block earlier than the deployment, so an off-by-one at the boundary cannot drop the
