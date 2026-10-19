@@ -16,6 +16,10 @@
  * conservative design in the set, on purpose.
  */
 :root {
+  /* Native controls follow this: without it the browser paints the date picker's
+     calendar glyph for a light page, which on a dark one is simply invisible, and the
+     picker popup comes up in the wrong palette. Scrollbars and selects follow too. */
+  color-scheme: light;
   --bg-base: #FFFFFF;
   --bg-surface: #FFFFFF;
   --bg-elevated: #F4F6F9;
