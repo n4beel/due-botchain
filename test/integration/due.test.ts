@@ -32,7 +32,10 @@ const CHAIN_ID = 968 as const;
 /** anvil well-known accounts */
 const KEY_ALICE = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80";
 const KEY_BOB = "0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d";
-const KEY_CHARLIE = "0x5de4111afa1a4b94908f83103eb2f95402bbf2493983d53721a40474a4641128";
+// anvil's account #2. The previous value was a corrupted copy of it and derived an address anvil
+// never funds, so "refuses a second pay" was failing on an empty balance long before it reached
+// AlreadyPaid — the contract was never at fault.
+const KEY_CHARLIE = "0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a";
 
 const local = defineChain({
   id: CHAIN_ID,
