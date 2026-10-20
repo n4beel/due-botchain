@@ -2,6 +2,25 @@
 
 Create a payment link. Share it. Get paid.
 
+### BOT Chain mainnet (677) — live
+
+| | |
+|---|---|
+| Contract | [`0x45B737380Ad888C1c279D5d9f373aD5c90D724D6`](https://scan.botchain.ai/address/0x45B737380Ad888C1c279D5d9f373aD5c90D724D6) · source verified |
+| Deploy block | 27323055 |
+
+### Bohr testnet (968) — live
+
+| | |
+|---|---|
+| Contract | [`0xe7b5d33BEDdf88f8f4Df64F0bdF04284b3A97A6c`](https://scan.bohr.life/address/0xe7b5d33BEDdf88f8f4Df64F0bdF04284b3A97A6c) · source verified |
+| Deploy block | 27397195 |
+
+The two addresses differ because the deployer's nonce diverged between the chains; each is this
+contract on its own network. The site targets mainnet.
+
+---
+
 ## What it does
 Due lets anyone create an on-chain invoice with an exact amount and an optional memo. The payee shares a `/i/[id]` link. The payer connects any native BOT Chain wallet and pays the exact amount, which transfers directly to the payee in the same transaction.
 
